@@ -16,7 +16,7 @@ class AnimationViewController: UIViewController {
     // MARK: - Private Properties
     private let animations = Animation.getAnimations()
     private var currentAnimation = Animation.getDefaultRandomAnimation()
-    private var nextAnomation = Animation.getDefaultRandomAnimation()
+    private var nextAnimation = Animation.getDefaultRandomAnimation()
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -30,12 +30,12 @@ class AnimationViewController: UIViewController {
         buttonClickAnimation(for: sender)
         
         animateWithParameters(animation: currentAnimation)
-        nextAnimationButton.setTitle("Run → \(nextAnomation.preset.rawValue)",
+        nextAnimationButton.setTitle("Run → \(nextAnimation.preset.rawValue)",
                                      for: .normal)
         
-        currentAnimation = nextAnomation
+        currentAnimation = nextAnimation
         guard let randomAnimation = animations.randomElement() else { return }
-        nextAnomation = randomAnimation
+        nextAnimation = randomAnimation
     }
     
     // MARK: - Private Methods
